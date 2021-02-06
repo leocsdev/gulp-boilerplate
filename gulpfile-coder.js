@@ -7,7 +7,7 @@ const browsersync = require("browser-sync").create();
 
 // Sass Task
 function scssTask() {
-  return src("src/sass/style.scss", { sourcemaps: true })
+  return src("app/scss/style.scss", { sourcemaps: true })
     .pipe(sass())
     .pipe(postcss([cssnano()]))
     .pipe(dest("dist", { sourcemaps: "." }));
@@ -15,7 +15,7 @@ function scssTask() {
 
 // JavaScript Task
 function jsTask() {
-  return src("src/js/script.js", { sourcemaps: true })
+  return src("app/js/script.js", { sourcemaps: true })
     .pipe(terser())
     .pipe(dest("dist", { sourcemaps: "." }));
 }
@@ -39,7 +39,7 @@ function browsersyncReload(cb) {
 function watchTask() {
   watch("*.html", browsersyncReload);
   watch(
-    ["src/sass/**/*.scss", "src/js/**/*.js"],
+    ["app/scss/**/*.scss", "app/js/**/*.js"],
     series(scssTask, jsTask, browsersyncReload)
   );
 }
