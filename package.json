@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/leocsdev/gulp-boilerplate/issues"
   },
-  "homepage": "https://github.com/leocsdev/gulp-boilerplate#readme"
+  "homepage": "https://github.com/leocsdev/gulp-boilerplate#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
